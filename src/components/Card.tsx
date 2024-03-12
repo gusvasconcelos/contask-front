@@ -26,20 +26,21 @@ function Card() {
 
     return (
         <div className="flex flex-col items-center">
-            <h1 className="text-4xl font-bold mb-8">Organizations</h1>
-            <div className="flex justify-center flex-wrap">
-                {data.map((organization: CardProps, index: number) => (
-                    <Link to={`/${organization.id}`} key={index}>
-                        <div className="card max-w-sm rounded overflow-hidden shadow-lg m-4 transform transition duration-500 ease-in-out hover:scale-105">
-                            <img className="w-full h-64 object-cover" src={organization.imageUrl} alt={organization.name} />
-                            <div className="px-6 py-4">
-                                <h2 className="font-bold text-xl mb-2 text-center">{organization.name}</h2>
-                                <p className="text-gray-700 text-base text-center"><b>CNPJ:</b> {organization.cnpj}</p>
-                            </div>
-                        </div>
-                    </Link>
-                ))}
-            </div>
+          <h1 className="text-4xl font-bold mb-8">Organizations</h1>
+          <div className="flex justify-center flex-wrap">
+            {data.map((organization: CardProps, index: number) => (
+                <Link to={`/${organization.id}`} key={index}>
+                <div className="card max-w-sm rounded overflow-hidden shadow-lg m-4 transform transition duration-500 ease-in-out hover:scale-105">
+                  <img className="w-full h-64 object-cover" src={organization.imageUrl} alt={organization.name} />
+                  <div className="px-6 py-4">
+                    <h2 className="font-bold text-xl mb-2 text-center">{organization.name}</h2>
+                    <p className="text-gray-700 text-base text-center"><b>CNPJ:</b> {organization.cnpj}</p>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <Link to="/create" className="mb-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition-colors duration-200">Create Organization</Link>
         </div>
     );
 }
